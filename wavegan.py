@@ -112,7 +112,6 @@ def WaveGANGenerator(
       output = conv1d_transpose(output, dim, kernel_len, 4, upsample=upsample)
       output = batchnorm(output)
     output = tf.nn.relu(output)
-
     # Layer 5
     # [16384, 64] -> [32768, nch]
     with tf.variable_scope('upconv_5'):
@@ -125,7 +124,6 @@ def WaveGANGenerator(
       output = conv1d_transpose(output, dim, kernel_len, 4, upsample=upsample)
       output = batchnorm(output)
     output = tf.nn.relu(output)
-
     # Layer 5
     # [16384, 64] -> [65536, nch]
     with tf.variable_scope('upconv_5'):
